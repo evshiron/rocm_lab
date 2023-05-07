@@ -1,0 +1,14 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 471fc8a..c4d3a64 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -463,7 +463,7 @@ option(BUILD_EXECUTORCH "Master flag to build Executorch" ON)
+ # symbol lookup error: miniconda3/envs/pytorch-py3.7/lib/libmkl_intel_lp64.so: undefined symbol: mkl_blas_dsyrk
+ # https://software.intel.com/en-us/articles/symbol-lookup-error-when-linking-intel-mkl-with-gcc-on-ubuntu
+ if(LINUX)
+-  set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-as-needed")
++  set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-as-needed,--verbose,-L/opt/rocm/lib")
+ endif()
+ 
+ if(MSVC)
+ 

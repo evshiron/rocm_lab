@@ -1,0 +1,19 @@
+name: docker-build-rocm5.5-ub22.04-torch2.0.1
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    permissions:
+      contents: read
+      packages: write
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: docker/login-action@v2
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    - run: docker build -f dockerfiles/rocm5.5-ub22.04-torch2.0.1 -t ghcr.io/${{ github.actor }}/rocm_lab:rocm5.5-ub22.04-torch2.0.1 .
+    - run: docker push ghcr.io/${{ github.actor }}/rocm_lab:rocm5.5-ub22.04-torch2.0.1

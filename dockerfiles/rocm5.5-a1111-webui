@@ -1,0 +1,13 @@
+FROM ghcr.io/evshiron/rocm_lab:rocm5.5-ub22.04-torch2.0.1
+
+SHELL ["/bin/bash", "-c"]
+WORKDIR /root
+
+ADD scripts/build_a1111-webui.sh build_a1111-webui.sh
+
+RUN source venv/bin/activate \
+  && bash build_a1111-webui.sh
+
+CMD source venv/bin/activate \
+  && cd /root/stable-diffusion-webui \
+  && LD_PRELOAD=libtcmalloc.so python3 launch.py --listen --no-half-vae

@@ -1,0 +1,16 @@
+name: build-rocm5.5-tensorflow2.10-wheels
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - run: sudo bash scripts/prepare.sh
+    - run: sudo bash scripts/build_tensorflow.sh
+    - uses: actions/upload-artifact@v3
+      with:
+        name: wheels
+        path: |
+          /tmp/tensorflow_pkg/*.whl

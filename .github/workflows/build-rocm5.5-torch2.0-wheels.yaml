@@ -13,4 +13,4 @@ jobs:
       with:
         name: wheels
         path: |
-          **/dist/*.whl
+          pytorch-v2.0.1/dist/*.whl

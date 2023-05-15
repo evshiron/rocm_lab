@@ -13,4 +13,4 @@ jobs:
       with:
         name: wheels
         path: |
-          **/dist/*.whl
+          vision-0.15.2/dist/*.whl

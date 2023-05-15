@@ -7,6 +7,7 @@ Experiments to see the potential of RX 7000 series.
 
 * [build-rocm5.5-torch2.0-wheels.yaml](https://github.com/evshiron/rocm_lab/actions/workflows/build-rocm5.5-torch2.0-wheels.yaml)
 * [build-rocm5.5-torchvision0.15-wheels.yaml](https://github.com/evshiron/rocm_lab/actions/workflows/build-rocm5.5-torchvision0.15-wheels.yaml)
+* [build-rocm5.5-tensorflow2.10-wheels.yaml](https://github.com/evshiron/rocm_lab/actions/workflows/build-rocm5.5-tensorflow2.10-wheels.yaml)
 
 ## Prebuilt Docker images
 

@@ -33,6 +33,6 @@ sudo touch $ROCM_PATH/.info/version
 
 pip install setuptools wheel numpy packaging requests
 
-bash build_rocm_python3 -n
+bash build_rocm_python3
 
 cd ..

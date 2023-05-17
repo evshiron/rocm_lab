@@ -2,6 +2,9 @@ name: build-rocm5.5-torch2.0-wheels
 
 on: workflow_dispatch
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,3 +17,8 @@ jobs:
         name: wheels
         path: |
           pytorch-v2.0.1/dist/*.whl
+    - uses: softprops/action-gh-release@v1
+      with:
+        tag_name: v1.14.514
+        files: |
+          **/dist/*.whl

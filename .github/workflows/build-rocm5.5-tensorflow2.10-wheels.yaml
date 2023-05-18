@@ -2,6 +2,9 @@ name: build-rocm5.5-tensorflow2.10-wheels
 
 on: workflow_dispatch
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: self-hosted
@@ -13,4 +16,9 @@ jobs:
       with:
         name: wheels
         path: |
+          /tmp/tensorflow_pkg/*.whl
+    - uses: softprops/action-gh-release@v1
+      with:
+        tag_name: v1.14.514
+        files: |
           /tmp/tensorflow_pkg/*.whl

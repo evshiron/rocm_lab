@@ -17,8 +17,8 @@ jobs:
         name: wheels
         path: |
           audio-2.0.2/dist/*.whl
-    # - uses: softprops/action-gh-release@v1
-    #   with:
-    #     tag_name: v1.14.514
-    #     files: |
-    #       **/dist/*.whl
+    - uses: softprops/action-gh-release@v1
+      with:
+        tag_name: v1.14.514
+        files: |
+          **/dist/*.whl

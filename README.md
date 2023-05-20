@@ -1,5 +1,5 @@
 
-![badge-torch-gfx1100](https://shields.io/github/actions/workflow/status/evshiron/rocm_lab/build-rocm5.5-torch2.0-wheels.yaml?label=torch2.0) ![badge-torchvision-gfx1100](https://shields.io/github/actions/workflow/status/evshiron/rocm_lab/build-rocm5.5-torchvision0.15-wheels.yaml?label=torchvision0.15) ![badge-tensorflow-gfx1100](https://shields.io/github/actions/workflow/status/evshiron/rocm_lab/build-rocm5.5-tensorflow2.10-wheels.yaml?label=tensorflow2.10)
+![badge-torch-gfx1100](https://shields.io/github/actions/workflow/status/evshiron/rocm_lab/build-rocm5.5-torch2.0-wheels.yaml?label=torch2.0) ![badge-tensorflow-gfx1100](https://shields.io/github/actions/workflow/status/evshiron/rocm_lab/build-rocm5.5-tensorflow2.10-wheels.yaml?label=tensorflow2.10) ![badge-torchvision-gfx1100](https://shields.io/github/actions/workflow/status/evshiron/rocm_lab/build-rocm5.5-torchvision0.15-wheels.yaml?label=torchvision0.15) ![badge-torchaudio-gfx1100](https://shields.io/github/actions/workflow/status/evshiron/rocm_lab/build-rocm5.5-torchaudio2.0-wheels.yaml?label=torchaudio2.0)
 
 # ROCm LAB
 
@@ -7,7 +7,7 @@ Experiments to see the potential of RX 7000 series.
 
 ## Prebuilt wheels
 
-Prebuilt wheels can now be found in [GitHub Releases](https://github.com/evshiron/rocm_lab/releases).
+Prebuilt wheels are built by [GitHub Actions](https://github.com/evshiron/rocm_lab/actions) and can now be found in [GitHub Releases](https://github.com/evshiron/rocm_lab/releases).
 
 ### How to use
 

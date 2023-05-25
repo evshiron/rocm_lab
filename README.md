@@ -17,6 +17,8 @@ Additionally, the website [Are we gfx1100 yet?](https://evshiron.github.io/are-w
 
 Prebuilt wheels are built by [GitHub Actions](https://github.com/evshiron/rocm_lab/actions) and can now be found in [GitHub Releases](https://github.com/evshiron/rocm_lab/releases).
 
+It's worth noting that these wheels are built using GitHub's `ubuntu-latest` runner, which is Ubuntu 22.04 right now. There might be dynamic linking issues when used in other systems. If it does, consider building a Docker container instead.
+
 ### How to use
 
 Simple download the wheel you want and install it with:
@@ -48,9 +50,9 @@ It's recommended to use the wheels above directly, or build your own Docker imag
 
 ```bash
 # add environment variables or volumes for your need
-docker run -ti --net=host --cap-add=SYS_PTRACE --security-opt seccomp=unconfined --device=/dev/kfd --device=/dev/dri --group-add video --ipc=host --shm-size 8G --name rocm5.5-automatic ghcr.io/evshiron/rocm_lab:rocm5.5-automatic
+docker run -ti --net=host --cap-add=SYS_PTRACE --security-opt seccomp=unconfined --device=/dev/kfd --device=/dev/dri --group-add video --ipc=host --shm-size 8G -e HSA_OVERRIDE_GFX_VERSION=11.0.0 --name rocm5.5-automatic ghcr.io/evshiron/rocm_lab:rocm5.5-automatic
 ```
 
 ## Are we gfx1100 yet?
 
-* https://evshiron.github.io/are-we-gfx1100-yet/
+* https://are-we-gfx1100-yet.github.io/

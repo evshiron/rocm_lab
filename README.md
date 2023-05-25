@@ -41,6 +41,7 @@ pip install torch-2.0.1+gite19229c-cp310-cp310-linux_x86_64.whl
   * rocm5.5-ub22.04-torch2.0.1
   * rocm5.5-a1111-webui
   * rocm5.5-automatic
+  * rocm5.5-text-gen-webui
 
 These Docker images are mainly proofs of concepts and will not be updated frequently.
 

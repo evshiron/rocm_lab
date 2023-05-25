@@ -56,3 +56,15 @@ docker run -ti --net=host --cap-add=SYS_PTRACE --security-opt seccomp=unconfined
 ## Are we gfx1100 yet?
 
 * https://are-we-gfx1100-yet.github.io/
+
+## Credits
+
+A large portion of the content in this repository comes from the internet. My main work is to collect, experiment, and organize this information.
+
+I would like to express my gratitude to other developers for their contributions, as well as those who have discussed with me and provided me with assistance.
+
+If you find my work helpful, please consider giving this repository a star. Your recognition will be my motivation.
+
+## License
+
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).

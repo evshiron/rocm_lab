@@ -1,0 +1,13 @@
+FROM ghcr.io/evshiron/rocm_lab:rocm5.5-ub22.04-torch2.0.1
+
+SHELL ["/bin/bash", "-c"]
+WORKDIR /root
+
+ADD scripts/build_text-gen-webui.sh build_text-gen-webui.sh
+
+RUN source venv/bin/activate \
+  && bash build_text-gen-webui.sh
+
+CMD source venv/bin/activate \
+  && cd /root/text-generation-webui \
+  && python3 server.py --listen

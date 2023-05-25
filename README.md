@@ -39,8 +39,8 @@ pip install torch-2.0.1+gite19229c-cp310-cp310-linux_x86_64.whl
 * https://github.com/evshiron/rocm_lab/pkgs/container/rocm_lab
   * rocm5.5-ub22.04-base
   * rocm5.5-ub22.04-torch2.0.1
-  * rocm5.5-ub22.04-a1111-webui
-  * rocm5.5-ub22.04-automatic
+  * rocm5.5-a1111-webui
+  * rocm5.5-automatic
 
 These Docker images are mainly proofs of concepts and will not be updated frequently.
 

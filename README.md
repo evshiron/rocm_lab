@@ -5,6 +5,16 @@
 
 Experiments to see the potential of RX 7000 series.
 
+## IMPORTANT!!!
+
+You can now install the official `torch` nightly build for ROCm 5.5 with:
+
+```bash
+pip3 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm5.5
+```
+
+For the official `tensorflow` nightly build, see [here](https://github.com/RadeonOpenCompute/ROCm/issues/1880#issuecomment-1591848769).
+
 ## Motivations
 
 As we know, ROCm 5.5.0 was released on May 2nd, 2023. After waiting for several days, we discovered that all official Docker images did not include support for the RX 7000 series (a.k.a. gfx1100), which are currently the best-performing and most suitable consumer-grade GPUs for the AI field under the AMD brand. As we aim to tap into the potential of RX 7000 series GPUs as soon as possible:

@@ -1,0 +1,24 @@
+name: build-rocm5.6-torch-wheels
+
+on: workflow_dispatch
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v3
+    - run: sudo bash scripts/5.6/prepare.sh
+    - run: sudo bash scripts/5.6/build_torch.sh
+    - uses: actions/upload-artifact@v3
+      with:
+        name: wheels
+        path: |
+          pytorch/dist/*.whl
+    - uses: softprops/action-gh-release@v1
+      with:
+        tag_name: rocm-5.6-builds
+        files: |
+          **/dist/*.whl

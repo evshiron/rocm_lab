@@ -1,0 +1,24 @@
+name: build-rocm5.6-torchvision-wheels
+
+on: workflow_dispatch
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - run: sudo bash scripts/5.6/prepare.sh
+    - run: sudo bash scripts/5.6/build_torchvision.sh
+    - uses: actions/upload-artifact@v3
+      with:
+        name: wheels
+        path: |
+          vision/dist/*.whl
+    - uses: softprops/action-gh-release@v1
+      with:
+        tag_name: rocm-5.6-builds
+        files: |
+          **/dist/*.whl

@@ -7,10 +7,13 @@ Experiments to see the potential of RX 7000 series.
 
 ## IMPORTANT!!!
 
-You can now install the official `torch` nightly build for ROCm 5.5 with:
+You can now install the official `torch` nightly build for ROCm 5.5+ with:
 
 ```bash
 pip3 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm5.5
+
+# or this more performant ones if you are using rocm 5.6
+pip3 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm5.6
 ```
 
 For the official `tensorflow` nightly build, see [here](https://github.com/RadeonOpenCompute/ROCm/issues/1880#issuecomment-1591848769).

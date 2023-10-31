@@ -10,19 +10,19 @@ source venv/bin/activate
 
 export WORKDIR=$(pwd)
 export PYTHON_BIN_PATH=$WORKDIR/venv/bin/python3
-export PYTHON_LIB_PATH=$WORKDIR/venv/lib/python3.10/site-packages
-export ROCM_PATH=/opt/rocm-5.5.0
+export PYTHON_LIB_PATH=$WORKDIR/venv/lib/python3.11/site-packages
+export ROCM_PATH=/opt/rocm-5.7.0
 export TF_NEED_ROCM=1
 export GPU_DEVICE_TARGETS=gfx1100
 
 # build tensorflow-rocm
 
-git clone -b r2.10-rocm-enhanced https://github.com/evshiron/tensorflow-rocm
+git clone -b r2.14-rocm-enhanced https://github.com/ROCmSoftwarePlatform/tensorflow-upstream
 
-cd tensorflow-rocm
+cd tensorflow-upstream
 
 # install bazel in venv
-curl -L https://github.com/bazelbuild/bazelisk/releases/download/v1.16.0/bazelisk-linux-amd64 -o $WORKDIR/venv/bin/bazel \
+curl -L https://github.com/bazelbuild/bazelisk/releases/download/v1.18.0/bazelisk-linux-amd64 -o $WORKDIR/venv/bin/bazel \
   && chmod +x $WORKDIR/venv/bin/bazel
 
 # declare build targets

@@ -4,21 +4,26 @@ set -ex
 
 sudo apt install -y patchelf
 
+sudo apt-get update && sudo apt-get install -y openjdk-8-jdk openjdk-8-jre unzip wget git libstdc++-12-dev
 python3 -m venv venv
+python3 -m pip install --upgrade pip
 
 source venv/bin/activate
 
 export WORKDIR=$(pwd)
 export PYTHON_BIN_PATH=$WORKDIR/venv/bin/python3
 export PYTHON_LIB_PATH=$WORKDIR/venv/lib/python3.11/site-packages
-export ROCM_PATH=/opt/rocm-5.7.1
+export ROCM_PATH=/opt/rocm-5.7.0
 export TF_NEED_ROCM=1
 export GPU_DEVICE_TARGETS=gfx1100
 
 # build tensorflow-rocm
 
-git clone -b r2.14-rocm-enhanced https://github.com/ROCmSoftwarePlatform/tensorflow-upstream
-
+if [ -d "tensorflow-upstream" ]; then
+    echo "tensorflow-upstream folder exists. Skipping git clone."
+else
+    git clone -b r2.14-rocm-enhanced https://github.com/ROCmSoftwarePlatform/tensorflow-upstream
+fi
 cd tensorflow-upstream
 
 # install bazel in venv

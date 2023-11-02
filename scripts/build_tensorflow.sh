@@ -22,7 +22,7 @@ export GPU_DEVICE_TARGETS=gfx1100
 if [ -d "tensorflow-upstream" ]; then
     echo "tensorflow-upstream folder exists. Skipping git clone."
 else
-    git clone -b r2.14-rocm-enhanced https://github.com/ROCmSoftwarePlatform/tensorflow-upstream
+    git clone https://github.com/ROCmSoftwarePlatform/tensorflow-upstream
 fi
 cd tensorflow-upstream
 

@@ -22,13 +22,15 @@ export GPU_DEVICE_TARGETS=gfx1100
 if [ -d "tensorflow-upstream" ]; then
     echo "tensorflow-upstream folder exists. Skipping git clone."
 else
-    git clone https://github.com/ROCmSoftwarePlatform/tensorflow-upstream
+    git clone --recursive https://github.com/ROCmSoftwarePlatform/tensorflow-upstream
 fi
 cd tensorflow-upstream
 
 # install bazel in venv
 curl -L https://github.com/bazelbuild/bazelisk/releases/download/v1.18.0/bazelisk-linux-amd64 -o $WORKDIR/venv/bin/bazel \
   && chmod +x $WORKDIR/venv/bin/bazel
+
+bazel clean --expunge
 
 # declare build targets
 printf '%s\n' ${GPU_DEVICE_TARGETS} | sudo tee -a $ROCM_PATH/bin/target.lst

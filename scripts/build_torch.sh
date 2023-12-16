@@ -11,11 +11,11 @@ export PYTORCH_ROCM_ARCH=gfx1100
 
 # build torch
 
-curl -L -O https://github.com/pytorch/pytorch/releases/download/v2.0.1/pytorch-v2.0.1.tar.gz
-tar -xzvf pytorch-v2.0.1.tar.gz
+curl -L -O https://github.com/pytorch/pytorch/releases/download/v2.1.2/pytorch-v2.1.2.tar.gz
+tar -xzvf pytorch-v2.1.2.tar.gz
 
-cd pytorch-v2.0.1
-echo 2.0.1 > version.txt
+cd pytorch-v2.1.2
+echo 2.1.2 > version.txt
 
 pip install cmake ninja
 pip install -r requirements.txt

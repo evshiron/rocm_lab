@@ -27,7 +27,7 @@ fi
 cd tensorflow-upstream
 
 # install bazel in venv
-curl -L https://github.com/bazelbuild/bazelisk/releases/download/v1.18.0/bazelisk-linux-amd64 -o $WORKDIR/venv/bin/bazel \
+curl -L https://github.com/bazelbuild/bazelisk/releases/download/v1.19.0/bazelisk-linux-amd64 -o $WORKDIR/venv/bin/bazel \
   && chmod +x $WORKDIR/venv/bin/bazel
 
 bazel clean --expunge

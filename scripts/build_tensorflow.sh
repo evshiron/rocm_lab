@@ -13,7 +13,7 @@ source venv/bin/activate
 export WORKDIR=$(pwd)
 export PYTHON_BIN_PATH=$WORKDIR/venv/bin/python3
 export PYTHON_LIB_PATH=$WORKDIR/venv/lib/python3.11/site-packages
-export ROCM_PATH=/opt/rocm-5.7.0
+export ROCM_PATH=/opt/rocm-6.0.0
 export TF_NEED_ROCM=1
 export GPU_DEVICE_TARGETS=gfx1100
 

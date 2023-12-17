@@ -10,7 +10,7 @@ export TRITON_USE_ROCM=ON
 
 # build triton
 
-git clone https://github.com/are-we-gfx1100-yet/triton
+git clone https://github.com/ROCmSoftwarePlatform/triton.git
 
 pushd triton
 

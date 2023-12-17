@@ -28,3 +28,8 @@ git apply ../patches/torch.diff
 python setup.py bdist_wheel
 
 cd ..
+
+wget https://raw.githubusercontent.com/wiki/ROCmSoftwarePlatform/pytorch/files/install_kdb_files_for_pytorch_wheels.sh
+export GFX_ARCH=gfx1100
+export ROCM_VERSION=6.0.0
+bash install_kdb_files_for_pytorch_wheels.sh

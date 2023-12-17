@@ -11,3 +11,4 @@ curl -O https://repo.radeon.com/amdgpu-install/6.0/ubuntu/jammy/amdgpu-install_6
 dpkg -i amdgpu-install_6.0.60000-1_all.deb
 
 DEBIAN_FRONTEND=noninteractive amdgpu-install --usecase=graphics,rocm -y
+sudo usermod -a -G render,video $LOGNAME

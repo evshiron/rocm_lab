@@ -7,15 +7,16 @@ python3 -m venv venv
 source venv/bin/activate
 
 export USE_CUDA=0
+export ROCM_PATH=/opt/rocm-6.0.0
 export PYTORCH_ROCM_ARCH=gfx1100
 
 # build torch
-
-curl -L -O https://github.com/pytorch/pytorch/releases/download/v2.1.2/pytorch-v2.1.2.tar.gz
-tar -xzvf pytorch-v2.1.2.tar.gz
-
-cd pytorch-v2.1.2
-echo 2.1.2 > version.txt
+if [ -d "pytorch" ]; then
+    echo "pytorch folder exists. Skipping git clone."
+else
+    git clone --recursive https://github.com/pytorch/pytorch.git 
+fi
+cd pytorch
 
 pip install cmake ninja
 pip install -r requirements.txt
@@ -23,13 +24,10 @@ pip install mkl mkl-include
 
 python3 tools/amd_build/build_amd.py
 
-git apply ../patches/torch.diff
+# git apply ../patches/torch.diff
 
 python setup.py bdist_wheel
 
 cd ..
 
-wget https://raw.githubusercontent.com/wiki/ROCmSoftwarePlatform/pytorch/files/install_kdb_files_for_pytorch_wheels.sh
-export GFX_ARCH=gfx1100
-export ROCM_VERSION=6.0.0
-bash install_kdb_files_for_pytorch_wheels.sh
+pip install -U pytorch/dist/*.whl

@@ -8,7 +8,7 @@ sudo apt-get update && sudo apt-get install -y \
   clang-tidy \
   cmake
 curl -O https://repo.radeon.com/amdgpu-install/6.0.2/ubuntu/jammy/amdgpu-install_6.0.60002-1_all.deb
-dpkg -i amdgpu-install_6.0.60001-1_all.deb
+dpkg -i amdgpu-install_6.0.60002-1_all.deb
 
 DEBIAN_FRONTEND=noninteractive amdgpu-install --usecase=graphics,rocm -y
 sudo usermod -a -G render,video $LOGNAME
